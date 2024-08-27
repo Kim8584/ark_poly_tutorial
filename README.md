@@ -1,5 +1,5 @@
-# Using ark_poly: A Guide to Working with Polynomials in Rust
-============================================================
+# Using ark_poly
+================
 
 `ark_poly` is a Rust library for working with polynomials, providing efficient and flexible data structures and algorithms for manipulating and evaluating polynomials. In this guide, we'll explore how to use `ark_poly` to create and work with multivariate, multilinear, and univariate polynomials.
 
