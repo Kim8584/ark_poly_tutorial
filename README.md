@@ -44,3 +44,36 @@ fn main() {
     println!("works fine");
     println!("so here is the poly {:?}", f);
 }
+# FFT in ark_poly
+
+## Radix-2 FFT
+
+crate also suppors fft implementantion of subset fields also dubbed "domains",
+
+
+```rust
+use rustfft::{FftPlanner, num_complex::Complex};
+
+fn main() {
+    // Define the input data (complex numbers)
+    let input = vec![
+        Complex::new(1.0, 0.0),
+        Complex::new(2.0, 0.0),
+        Complex::new(3.0, 0.0),
+        Complex::new(4.0, 0.0),
+    ];
+
+    // Create an FFT planner and create a radix-2 FFT instance
+    let mut planner = FftPlanner::new();
+    let fft = planner.plan_fft_forward(input.len());
+
+    // Perform the FFT
+    let mut buffer = input.clone();
+    fft.process(&mut buffer);
+
+    // Print the result
+    for value in buffer {
+        println!("{:?}", value);
+    }
+}
+
